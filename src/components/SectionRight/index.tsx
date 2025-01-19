@@ -1,4 +1,4 @@
-import { IoIosArrowForward, IoIosSettings } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowForward, IoIosSettings } from "react-icons/io";
 import Image from "../../assets/merah.jpg";
 import Computer from "../../assets/computer.jpg";
 
@@ -17,7 +17,17 @@ const SectionRight: React.FC = () => {
                     </div>
                 </div>
                 <div className="flex flex-col justify-between items-center mt-10 px-2 bg-gray-800  rounded-xl">
-                    <p className="text-white mt-4">{`< April 2025 >`}</p>
+                    <div className="grid grid-cols-3 mt-6 text-white justify-between">
+                        <div className="flex items-center">
+                            <IoIosArrowBack />
+                        </div>
+                        <div className="ng-yellow-500">
+                            <p>April 2025</p>
+                        </div>
+                        <div className="flex items-center justify-end">
+                            <IoIosArrowForward />
+                        </div>
+                    </div>
                     <div className="flex flex-row gap-2 py-8">
                         {["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"].map((day, index) => (
                             <div key={index} className="flex flex-col text-black bg-gray-50 rounded-md p-2 text-center border border-gray-50">
