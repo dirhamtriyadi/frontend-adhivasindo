@@ -69,7 +69,7 @@ const SidebarLeft: React.FC<SidebarLeftProps> = ({ isMenuOpen }) => {
                         href="#"
                         className="flex items-center space-x-3 text-gray-300 hover:bg-gray-700 p-3 rounded-md"
                     >
-                        <IoIosPower /> <span>Logout</span>
+                        <IoIosPower /> <span>Log out</span>
                     </a>
                 </nav>
             </aside>
