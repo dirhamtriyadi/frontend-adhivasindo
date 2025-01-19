@@ -109,7 +109,7 @@ function App() {
           <main className={`flex-1 flex flex-col transition-all duration-300 ${isMenuOpen ? "lg:pl-60" : "lg:pl-0"} w-full`}>
             <section className="w-full px-2 space-y-6 flex flex-col rounded-lg">
               <div className="bg-purple-600 p-5 rounded-lg text-white">
-                <div className="flex lg:flex-row">
+                <div className="grid grid-cols-2 max-md:grid-cols-1 gap-4">
                   <div className="flex flex-col">
                     <h1 className="text-2xl font-semibold text-yellow-400 py-2">Pemrograman</h1>
                     <h1 className="text-2xl font-semibold text-gray-100">Pemrograman Frontend Modern <br /> dengan React dan Angular</h1>
@@ -126,7 +126,7 @@ function App() {
                       </div>
                     </div>
                   </div>
-                  <div className="flex flex-col w-[900px] justify-end items-end">
+                  <div className="flex flex-col justify-end items-end">
                     <button className="font-semibold bg-white text-black rounded-lg px-4 py-2 text-sm w-[60%] h-16">MULAI LEARNING</button>
                   </div>
                 </div>
