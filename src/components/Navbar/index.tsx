@@ -5,10 +5,9 @@ import Adhivasindo from "../../assets/adhivasindo.png";
 
 interface NavbarProps {
     toggleMenu: () => void;
-    isMenuOpen: boolean;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ toggleMenu, isMenuOpen }) => {
+const Navbar: React.FC<NavbarProps> = ({ toggleMenu }) => {
     return (
         <header className="p-4 flex items-center">
             <div className="flex items-center cursor-pointer w-60">

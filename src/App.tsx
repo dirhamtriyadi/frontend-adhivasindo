@@ -21,7 +21,7 @@ function App() {
       {/* Section Left */}
       <div className="text-gray-900 min-h-screen flex flex-col w-[100%]">
         {/* Header */}
-        <Navbar toggleMenu={toggleMenu} isMenuOpen={isMenuOpen} />
+        <Navbar toggleMenu={toggleMenu} />
 
         <div className="flex flex-1 gap-4 relative">
           {/* Sidebar */}
