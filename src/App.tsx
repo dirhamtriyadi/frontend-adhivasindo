@@ -115,7 +115,7 @@ function App() {
                     <h1 className="text-2xl font-semibold text-gray-100">Pemrograman Frontend Modern <br /> dengan React dan Angular</h1>
                     <p className="mt-2 text-xs">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum rerum amet ex cum earum mollitia quod, dolore harum delectus ducimus error architecto cupiditate maxime libero iure? Dicta sint nihil non. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi obcaecati dolorum amet itaque ducimus necessitatibus delectus labore exercitationem laborum asperiores quibusdam dolorem similique est sequi dolor, non excepturi suscipit! Quisquam.</p>
 
-                    <div className="flex flex-row mt-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                       <div className="flex flex-row items-center">
                         <FaRegUser />
                         <span className="text-lg ml-2">Pemateri By Josep</span>
