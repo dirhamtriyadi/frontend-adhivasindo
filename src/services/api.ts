@@ -13,3 +13,19 @@ export const loginUser = async (email: string, password: string) => {
 
   return response.json();
 };
+
+export const getModul = async ( page: number = 1 ) => {
+  const response = await fetch(`${API_URL}v1/contents?page=${page}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: "Bearer " + localStorage.getItem("token"),
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error("Modul gagal, periksa kembali kredensial Anda.");
+  }
+
+  return response.json();
+};
