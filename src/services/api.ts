@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8000/api/"; // Ganti dengan URL backend-mu
+const API_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const loginUser = async (email: string, password: string) => {
   const response = await fetch(`${API_URL}v1/login`, {
