@@ -9,6 +9,7 @@ import Pemateri from "./pages/Pemateri";
 import Settings from "./pages/Settings";
 import Kalender from "./pages/Kalender";
 import Login from "./pages/Auth/Login";
+import Register from "./pages/Auth/Register";
 import AuthLayout from "./layouts/AuthLayout";
 import MainLayout from "./layouts/MainLayout";
 
@@ -18,6 +19,7 @@ function App() {
       <Route element={<AuthLayout />}>
         <Route path="/auth" element={<Login />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Route>
       <Route element={<PrivateRoute />}>
         <Route element={<MainLayout />}>

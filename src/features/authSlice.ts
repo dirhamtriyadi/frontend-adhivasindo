@@ -1,6 +1,19 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { loginUser, logoutUser } from "../services/api";
-import { AuthState, LoginCredentials, LoginResponse } from "../types/auth";
+import { loginUser, logoutUser, registerUser } from "../services/api";
+import { AuthState, LoginCredentials, LoginResponse, RegisterCredentials } from "../types/auth";
+
+export const register = createAsyncThunk<void, RegisterCredentials>(
+  "auth/register",
+  async (credentials, { rejectWithValue }) => {
+    try {
+      const data = await registerUser(credentials.name, credentials.email, credentials.password);
+
+      return data.data;
+    } catch (error: any) {
+      return rejectWithValue(error.message);
+    }
+  }
+);
 
 export const login = createAsyncThunk<LoginResponse, LoginCredentials>(
   "auth/login",
@@ -47,6 +60,17 @@ const authSlice = createSlice({
   initialState,
   reducers: {},
   extraReducers: (builder) => {
+    builder.addCase(register.pending, (state) => {
+      state.isLoading = true;
+      state.error = null;
+    });
+    builder.addCase(register.fulfilled, (state, action) => {
+      state.isLoading = false;
+    });
+    builder.addCase(register.rejected, (state: any, action) => {
+      state.isLoading = false;
+      state.error = action.payload;
+    });
     builder.addCase(login.pending, (state) => {
       state.isLoading = true;
       state.error = null;

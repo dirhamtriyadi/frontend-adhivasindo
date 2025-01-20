@@ -12,6 +12,12 @@ export interface AuthState {
   error: string | null;
 }
 
+export interface RegisterCredentials {
+  name: string;
+  email: string;
+  password: string;
+}
+
 export interface LoginCredentials {
   email: string;
   password: string;
