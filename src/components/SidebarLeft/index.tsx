@@ -3,12 +3,16 @@ import { IoIosPower } from "react-icons/io";
 import { IoCalendarOutline, IoChatboxEllipsesOutline, IoSettingsOutline } from "react-icons/io5";
 import { LuLayoutGrid, LuUsers } from "react-icons/lu";
 import { Link, useLocation } from "react-router";
+import { useAppDispatch } from "../../app/hooks";
+import { logout } from "../../features/authSlice";
 
 interface SidebarLeftProps {
     isMenuOpen: boolean;
 }
 
 const SidebarLeft: React.FC<SidebarLeftProps> = ({ isMenuOpen }) => {
+    const dispatch = useAppDispatch();
+
     const location = useLocation();
 
     const isActiveRoute = (path: string) => location.pathname === path;
@@ -65,12 +69,12 @@ const SidebarLeft: React.FC<SidebarLeftProps> = ({ isMenuOpen }) => {
                         <IoCalendarOutline /> <span>Kalender</span>
                     </Link>
                     <hr />
-                    <a
-                        href="#"
-                        className="flex items-center space-x-3 text-gray-300 hover:bg-gray-700 p-3 rounded-md"
+                    <button
+                        className="flex w-full items-center space-x-3 text-gray-300 hover:bg-gray-700 p-3 rounded-md"
+                        onClick={() => dispatch(logout())}
                     >
                         <IoIosPower /> <span>Log out</span>
-                    </a>
+                    </button>
                 </nav>
             </aside>
         </>
